@@ -1,12 +1,20 @@
-// function reducer(state, action) {
-//     switch (action.type) {
-//       case 'increment':
-//         return {count: state.count + 1};
-//       case 'decrement':
-//         return {count: state.count - 1};
-//       default:
-//         throw new Error();
-//     }
-//   }
+function Reducer(state, action) {
+	switch (action.type) {
+		case 'add':
+			return [
+				...state,
+				{
+					id: state.length,
+					name: action.name
+				}
+			];
+		case 'remove':
+			return (
+				state.filter((_, index) => index !== action.index)
+			);
+		default:
+			return state;
+	}
+}
 
-// export default reducer;
+export default Reducer;

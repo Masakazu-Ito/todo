@@ -1,19 +1,15 @@
 import React from 'react';
 import Register from './component/Register'
+import Reducer from './Reducer'
 
-// const ThemeContext = React.createContext();
 
-// function App() {
-//   return (
-//     <ThemeContext.Provider value={state.toDo}>
-//       <Register />
-//     </ThemeContext.Provider>
-//   );
-// }
+const MyContext = React.createContext();
 
-function App(){
-  return(
-    <Register />
+function App() {
+  return (
+    <MyContext.Provider value={Reducer}>
+      <Register />
+    </MyContext.Provider>
   );
 }
 
